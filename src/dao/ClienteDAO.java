@@ -20,12 +20,12 @@ public class ClienteDAO {
 	public void insereCliente(Cliente cliente) {
 
 		try {
-			query = "INSERT INTO cliente (nome, telefone, rg) VALUES (?, ?, ?)";
+			query = "INSERT INTO cliente (nome, telefone, email) VALUES (?, ?, ?)";
 			ps = conexao.getConexao().prepareStatement(query);
 
 			ps.setString(1, cliente.getNome());
 			ps.setString(2, cliente.getTelefone());
-			ps.setString(3, cliente.getRg());
+			ps.setString(3, cliente.getEmail());
 
 			ps.executeUpdate();
 			

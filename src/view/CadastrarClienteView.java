@@ -19,8 +19,13 @@ public class CadastrarClienteView {
 		cliente.setTelefone(s.nextLine());
 
 		s = new Scanner(System.in);
-		System.out.print("Confirme seu RG: ");
-		cliente.setRg(s.next());
+		System.out.print("Confirme seu email: ");
+		cliente.setEmail(s.next());
+		
+		System.out.println("");
+		System.out.println("Mesa reservada com sucesso "+cliente.getNome());
+		
+		System.out.println("------------------");
 
 		return cliente;
 	}

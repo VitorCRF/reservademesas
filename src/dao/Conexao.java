@@ -15,7 +15,7 @@ public class Conexao {
 	private Conexao() {
 		conex = null;
 		usuario_mysql = "root";
-		senha_mysql = "";
+		senha_mysql = "root";
 
 		con_banco = "jdbc:mysql://127.0.0.1:3306/reservas?useSSL=false";
 

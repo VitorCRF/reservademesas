@@ -10,13 +10,18 @@ public class ReservarMesaView {
 	public Mesa telaReservarMesa() {
 		mesa = new Mesa();
 		Scanner s = new Scanner(System.in);
+		
+		System.out.println("------------------");
+		System.out.println("Reservar mesa");
+		System.out.println("");
 
-		System.out.print("Informe o Rg: ");
-		mesa.setRgCliente(s.next());
+		System.out.print("Informe o email: ");
+		mesa.setEmailCliente(s.next());
 
 		s = new Scanner(System.in);
 		System.out.print("Numero da mesa: ");
 		mesa.setNumero(s.nextInt());
+		System.out.println("------------------");
 
 		return mesa;
 	}
