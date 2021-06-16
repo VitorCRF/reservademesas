@@ -19,7 +19,7 @@ public class CadastrarClienteView {
 		cliente.setTelefone(s.nextLine());
 
 		s = new Scanner(System.in);
-		System.out.print("Digite o RG: ");
+		System.out.print("Confirme seu RG: ");
 		cliente.setRg(s.next());
 
 		return cliente;

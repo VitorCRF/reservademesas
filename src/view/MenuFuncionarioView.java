@@ -10,6 +10,7 @@ public class MenuFuncionarioView {
 		System.out.println("(2) Listar  mesas Disponíveis");
 		System.out.println("(3) Listar todas mesas");
 		System.out.println("(4) Excluir mesa");
+		System.out.println("(5) Liberar mesa");
 
 		return sc.nextInt();
 	}

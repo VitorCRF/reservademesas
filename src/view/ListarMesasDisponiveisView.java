@@ -6,7 +6,6 @@ import java.sql.SQLException;
 public class ListarMesasDisponiveisView {
     int mesa = 0;
     public Boolean telaListarMesasDisponiveis(ResultSet rs) {
-        System.out.println("Mesas disponiveis: ");
 
         try {
             while (rs.next()) {
@@ -15,6 +14,9 @@ public class ListarMesasDisponiveisView {
             }
         } catch (SQLException ex) {
         }
+        System.out.println("");
+        System.out.println("Essas são as Mesas disponiveis: ");
+        System.out.println("quantidade = " + mesa);
 
         if (mesa==0){
             System.out.println("Ops! Parece que não tem nenhuma mesa disponivel.");

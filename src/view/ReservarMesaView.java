@@ -11,11 +11,11 @@ public class ReservarMesaView {
 		mesa = new Mesa();
 		Scanner s = new Scanner(System.in);
 
-		System.out.println("Confirme o Rg: ");
+		System.out.print("Informe o Rg: ");
 		mesa.setRgCliente(s.next());
 
 		s = new Scanner(System.in);
-		System.out.println("Numero: ");
+		System.out.print("Numero da mesa: ");
 		mesa.setNumero(s.nextInt());
 
 		return mesa;

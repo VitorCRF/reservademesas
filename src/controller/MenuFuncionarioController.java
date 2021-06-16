@@ -8,6 +8,7 @@ public class MenuFuncionarioController {
 	private ListarMesasDisponiveisController listarMesasDisponiveisController;
 	private ListarTodasMesasController listarTodasMesasController;
 	private ExcluirMesaController excluirMesaController;
+	private LiberarMesaController liberarMesaController;
 
 	public MenuFuncionarioController() {
 		menuFuncionarioView = new MenuFuncionarioView();
@@ -22,6 +23,7 @@ public class MenuFuncionarioController {
 			}
 			case 3 -> listarTodasMesasController = new ListarTodasMesasController();
 			case 4 -> excluirMesaController = new ExcluirMesaController();
+			case 5 -> liberarMesaController = new LiberarMesaController();
 			default -> menuFuncionarioView.telaOpcaoInvalida();
 		}
 

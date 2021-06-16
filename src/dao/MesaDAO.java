@@ -47,7 +47,7 @@ public class MesaDAO {
 	public void atualizaMesa(Mesa mesa) {
 
 		try {
-			query = "SELECT * FROM mesas where disponibilidade = true";
+			//query = "SELECT * FROM mesas where disponibilidade = true";
 			//fazer select pra ver se a mesa esta disponivel
 			//se estiver executa o update
 			//query = "INSERT INTO mesas (numero, rg, disponibilidade) VALUES (?, ?, ?)";
@@ -104,7 +104,23 @@ public class MesaDAO {
 			query = "DELETE FROM mesas WHERE numero = ?";
 			ps = conexao.getConexao().prepareStatement(query);
 			ps.setInt(1, mesa.getNumero());
-			rs = ps.executeQuery();
+			ps.executeUpdate();
+
+			ps.close();
+
+		}catch (SQLException e) {
+
+		}
+	}
+
+	public void liberarMesas(Mesa mesa) {
+		try {
+			query = "UPDATE mesas SET rg = null, disponibilidade = true WHERE numero = ?";
+			ps = conexao.getConexao().prepareStatement(query);
+			ps.setInt(2, mesa.getNumero());
+			ps.executeUpdate();
+
+			ps.close();
 
 		}catch (SQLException e) {
 
