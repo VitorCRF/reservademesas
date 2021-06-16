@@ -5,14 +5,14 @@ import dao.MesaDAO;
 import view.ListarTodasMesasView;
 
 public class ListarTodasMesasController {
-    private MesaDAO MesaDAO;
+    private MesaDAO mesaDAO;
     private ResultSet rs;
     private ListarTodasMesasView mesasView;
 
     public ListarTodasMesasController() {
 
-        MesaDAO = new MesaDAO();
-        rs = MesaDAO.listarTodasMesas();
+        mesaDAO = new MesaDAO();
+        rs = mesaDAO.listarTodasMesas();
         mesasView = new ListarTodasMesasView();
         mesasView.telaListarTodasMesasView(rs);
     }

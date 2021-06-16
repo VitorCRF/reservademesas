@@ -11,14 +11,16 @@ public class ReservarMesaView {
 		mesa = new Mesa();
 		Scanner s = new Scanner(System.in);
 
-		System.out.println("\n Confirme o Rg: ");
+		System.out.println("Confirme o Rg: ");
 		mesa.setRgCliente(s.next());
 
 		s = new Scanner(System.in);
-		System.out.println("\n Numero: ");
+		System.out.println("Numero: ");
 		mesa.setNumero(s.nextInt());
 
-		mesa.setDisponivel(false);
 		return mesa;
+	}
+	public void telaMesaIndisponivel(){
+		System.out.println("Essa mesa não está disponível!");
 	}
 }

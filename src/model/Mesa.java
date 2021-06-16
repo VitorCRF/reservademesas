@@ -4,7 +4,6 @@ package model;
 public class Mesa {
 
 	private int numero;
-	private boolean disponivel;
 	private String rgCliente;
 
 	public int getNumero() {
@@ -13,14 +12,6 @@ public class Mesa {
 
 	public void setNumero(int numero) {
 		this.numero = numero;
-	}
-
-	public boolean isDisponivel() {
-		return disponivel;
-	}
-
-	public void setDisponivel(boolean disponivel) {
-		this.disponivel = disponivel;
 	}
 
 	public String getRgCliente() {

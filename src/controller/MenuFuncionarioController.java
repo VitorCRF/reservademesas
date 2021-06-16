@@ -7,6 +7,7 @@ public class MenuFuncionarioController {
 	private CadastrarMesasController cadastrarMesasController;
 	private ListarMesasDisponiveisController listarMesasDisponiveisController;
 	private ListarTodasMesasController listarTodasMesasController;
+	private ExcluirMesaController excluirMesaController;
 
 	public MenuFuncionarioController() {
 		menuFuncionarioView = new MenuFuncionarioView();
@@ -15,9 +16,12 @@ public class MenuFuncionarioController {
 
 		switch (opcao) {
 			case 1 -> cadastrarMesasController = new CadastrarMesasController();
-			case 2 -> listarMesasDisponiveisController = new ListarMesasDisponiveisController();
+			case 2 -> {
+				listarMesasDisponiveisController = new ListarMesasDisponiveisController();
+				listarMesasDisponiveisController.listarMesasDisponiveisController();
+			}
 			case 3 -> listarTodasMesasController = new ListarTodasMesasController();
-			//case 4 excluir mesa
+			case 4 -> excluirMesaController = new ExcluirMesaController();
 			default -> menuFuncionarioView.telaOpcaoInvalida();
 		}
 

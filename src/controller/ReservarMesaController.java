@@ -16,15 +16,20 @@ public class ReservarMesaController {
 	public ReservarMesaController() {
 		mesa = new Mesa();
 
-		clienteController = new CadastrarClienteController();
-
 		mesasController = new ListarMesasDisponiveisController();
 
-		mesaView = new ReservarMesaView();
-		mesa = mesaView.telaReservarMesa();
-		mesaDAO = new MesaDAO();
-		mesaDAO.atualizaMesa(mesa);
 
+		if (mesasController.listarMesasDisponiveisController()){
+			mesaView = new ReservarMesaView();
+			mesa = mesaView.telaReservarMesa();
+			mesaDAO = new MesaDAO();
 
+			if(mesaDAO.conferirMesa(mesa) != null){
+				mesaDAO.atualizaMesa(mesa);
+				clienteController = new CadastrarClienteController();
+			}
+			else
+				mesaView.telaMesaIndisponivel();
+		}
 	}
 }

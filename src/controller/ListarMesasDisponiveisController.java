@@ -5,15 +5,15 @@ import dao.MesaDAO;
 import view.ListarMesasDisponiveisView;
 
 public class ListarMesasDisponiveisController {
-    private MesaDAO MesaDAO;
+    private MesaDAO mesaDAO;
     private ResultSet rs;
     private ListarMesasDisponiveisView lmv;
 
-    public ListarMesasDisponiveisController() {
-        
-        MesaDAO = new MesaDAO();
-        rs = MesaDAO.listarMesasDisponiveis();
+    public Boolean listarMesasDisponiveisController() {
+
+        mesaDAO = new MesaDAO();
+        rs = mesaDAO.listarMesasDisponiveis();
         lmv = new ListarMesasDisponiveisView();
-        lmv.telaListarMesasDisponiveis(rs);
+        return lmv.telaListarMesasDisponiveis(rs);
     }
 }

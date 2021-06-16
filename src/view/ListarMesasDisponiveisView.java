@@ -4,16 +4,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ListarMesasDisponiveisView {
-    public void telaListarMesasDisponiveis(ResultSet rs) {
-        System.out.println("Essas são as mesas disponiveis: ");
-        System.out.println("Numero");
+    int mesa = 0;
+    public Boolean telaListarMesasDisponiveis(ResultSet rs) {
+        System.out.println("Mesas disponiveis: ");
 
         try {
             while (rs.next()) {
                 System.out.print(" " + rs.getString("numero") + " | ");
+                mesa++;
             }
         } catch (SQLException ex) {
         }
+
+        if (mesa==0){
+            System.out.println("Ops! Parece que não tem nenhuma mesa disponivel.");
+            return false;
+        }
+        System.out.println("");
+        return true;
     }
 
 }
