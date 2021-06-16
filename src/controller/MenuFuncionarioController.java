@@ -17,6 +17,7 @@ public class MenuFuncionarioController {
 			case 1 -> cadastrarMesasController = new CadastrarMesasController();
 			case 2 -> listarMesasDisponiveisController = new ListarMesasDisponiveisController();
 			case 3 -> listarTodasMesasController = new ListarTodasMesasController();
+			//case 4 excluir mesa
 			default -> menuFuncionarioView.telaOpcaoInvalida();
 		}
 
