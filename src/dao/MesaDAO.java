@@ -47,6 +47,8 @@ public class MesaDAO {
 	public void atualizaMesa(Mesa mesa) {
 
 		try {
+			//fazer select pra ver se a mesa esta disponivel
+			//se estiver executa o update
 			//query = "INSERT INTO mesas (numero, rg, disponibilidade) VALUES (?, ?, ?)";
 			query = "UPDATE mesas SET rg = ?, disponibilidade = false WHERE numero = ?";
 			ps = conexao.getConexao().prepareStatement(query);
