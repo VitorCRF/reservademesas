@@ -10,10 +10,12 @@ public class ExcluirMesaView {
     public Mesa telaExcluirMesas() {
         Mesa mesa = new Mesa();
         Scanner s = new Scanner(System.in);
-
-        System.out.println("Exclus√£o de mesas");
+        
+        System.out.println("");
+        System.out.println("Exclus„o de mesas");
         System.out.print("Digite o numero da mesa: ");
         mesa.setNumero(s.nextInt());
+        System.out.println("");
 
         return mesa;
     }

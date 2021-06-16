@@ -5,7 +5,7 @@ public class Cliente {
 
 	private String nome;
 	private String telefone;
-	private String Rg;
+	private String email;
 	
 	public Cliente() {
 
@@ -26,12 +26,12 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-	public String getRg() {
-		return Rg;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setRg(String rg) {
-		Rg = rg;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	

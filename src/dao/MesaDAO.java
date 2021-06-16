@@ -18,9 +18,9 @@ public class MesaDAO {
 
 	public ResultSet conferirReservas(Mesa mesa) {
 		try {
-			query = "SELECT * FROM cliente INNER JOIN mesas ON mesas.rg = cliente.rg where cliente.rg = ?";
+			query = "SELECT * FROM cliente INNER JOIN mesas ON mesas.email = cliente.email where cliente.email = ?";
 			ps = conexao.getConexao().prepareStatement(query);
-			ps.setString(1, mesa.getRgCliente());
+			ps.setString(1, mesa.getEmailCliente());
 			rs = ps.executeQuery();
 
 			return rs;
@@ -33,10 +33,11 @@ public class MesaDAO {
 	public void insereMesa(Mesa mesa) {
 		
 		try {
-			query = "INSERT INTO mesas (numero, disponibilidade) VALUES (?, true)";
+			query = "INSERT INTO mesas (numero, disponibilidade) VALUES (?, ?)";
 			ps = conexao.getConexao().prepareStatement(query);
 
 			ps.setInt(1, mesa.getNumero());
+			ps.setInt(2, 1);
 			ps.executeUpdate();
 			
 			ps.close();
@@ -51,10 +52,10 @@ public class MesaDAO {
 			//fazer select pra ver se a mesa esta disponivel
 			//se estiver executa o update
 			//query = "INSERT INTO mesas (numero, rg, disponibilidade) VALUES (?, ?, ?)";
-			query = "UPDATE mesas SET rg = ?, disponibilidade = false WHERE numero = ?";
+			query = "UPDATE mesas SET email = ?, disponibilidade = 0 WHERE numero = ?";
 			ps = conexao.getConexao().prepareStatement(query);
 
-			ps.setString(1, mesa.getRgCliente());
+			ps.setString(1, mesa.getEmailCliente());
 			ps.setInt(2, mesa.getNumero());
 			ps.executeUpdate();
 
@@ -115,9 +116,9 @@ public class MesaDAO {
 
 	public void liberarMesas(Mesa mesa) {
 		try {
-			query = "UPDATE mesas SET rg = null, disponibilidade = true WHERE numero = ?";
+			query = "UPDATE mesas SET email = null, disponibilidade = 1 WHERE numero = ?";
 			ps = conexao.getConexao().prepareStatement(query);
-			ps.setInt(2, mesa.getNumero());
+			ps.setInt(1, mesa.getNumero());
 			ps.executeUpdate();
 
 			ps.close();

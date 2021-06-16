@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 public class ListarTodasMesasView {
     public void telaListarTodasMesasView(ResultSet rs) {
+    	System.out.println("--------------------------------------------");
         System.out.println("Essas são todas as mesas do estabelecimento: ");
         System.out.println("Numero");
 
@@ -14,6 +15,8 @@ public class ListarTodasMesasView {
             }
         } catch (SQLException ex) {
         }
+        System.out.println("");
+        System.out.println("--------------------------------------------");
     }
 }
 

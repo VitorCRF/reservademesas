@@ -4,7 +4,7 @@ package model;
 public class Mesa {
 
 	private int numero;
-	private String rgCliente;
+	private String emailCliente;
 
 	public int getNumero() {
 		return numero;
@@ -14,12 +14,12 @@ public class Mesa {
 		this.numero = numero;
 	}
 
-	public String getRgCliente() {
-		return rgCliente;
+	public String getEmailCliente() {
+		return emailCliente;
 	}
 
-	public void setRgCliente(String rgCliente) {
-		this.rgCliente = rgCliente;
+	public void setEmailCliente(String emailCliente) {
+		this.emailCliente = emailCliente;
 	}
 
 	
