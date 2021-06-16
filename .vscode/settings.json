@@ -1,0 +1,11 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\tiago\\Downloads\\mysql-connector-java-8.0.23.jar"
+        ],
+        "exclude": [
+            "c:\\Users\\vitor_000\\Downloads\\mysql-connector-java-8.0.23.jar"
+        ]
+    }
+}
